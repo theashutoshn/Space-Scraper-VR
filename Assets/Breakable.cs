@@ -25,7 +25,7 @@ public class Breakable : MonoBehaviour
 
     public void Break()
     {
-        currentTime = Time.deltaTime;
+        currentTime += Time.deltaTime;
         if(currentTime > timeToBreak)
         {
             foreach(var item in breakableItems)
