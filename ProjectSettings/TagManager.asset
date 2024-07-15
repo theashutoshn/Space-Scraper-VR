@@ -8,6 +8,7 @@ TagManager:
   - Left Hand
   - Right Hand
   - Cube
+  - EnergyCube
   layers:
   - Default
   - TransparentFX
