@@ -11,6 +11,8 @@ public class SpaceOutside : MonoBehaviour
 
     public float forwardSpeed;
     public float sideSpeed;
+
+    private bool wasOn = false;
     void Start()
     {
         
@@ -24,5 +26,22 @@ public class SpaceOutside : MonoBehaviour
 
         Vector3 velocity = new Vector3(sideVelocity, 0, forwardVelocity);
         transform.position += velocity * Time.deltaTime;
+
+        if(lever.value != wasOn)
+        {
+
+            if(lever.value)
+            {
+                AudioManager.instance.Play("Spaceship Engine");
+            }
+            else
+            {
+                AudioManager.instance.Stop("Spaceship Engine");
+            }
+        }
+
+        wasOn = lever.value;
+
+
     }
 }

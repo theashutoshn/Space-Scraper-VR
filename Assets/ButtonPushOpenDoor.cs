@@ -16,6 +16,7 @@ public class ButtonPushOpenDoor : MonoBehaviour
     public void DoorOpen()
     {
         bool isOpen =  _animator.GetBool(boolName); // assgining the Poke_Open bool to a new bool isOpen
-        _animator.SetBool(boolName, !isOpen); // changing the assigned bool to not isOpen 
+        _animator.SetBool(boolName, !isOpen); // changing the assigned bool to not isOpen
+        AudioManager.instance.Play("Door Open");
     }
 }

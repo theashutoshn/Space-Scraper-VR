@@ -28,12 +28,14 @@ public class MeteorPistol : MonoBehaviour
 
     public void StartShoot()
     {
+        AudioManager.instance.Play("Space Pistol");
         particles.Play();
         isRayCastActive = true;
     }
 
     public void StopShoot()
     {
+        AudioManager.instance.Stop("Space Pistol");
         particles.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
         isRayCastActive = false;
     }
